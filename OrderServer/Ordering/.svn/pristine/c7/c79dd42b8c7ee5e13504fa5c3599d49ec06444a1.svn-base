@@ -1,0 +1,34 @@
+#project database config
+dbType=mysql
+jdbcUrl = jdbc:mysql://101.132.28.94/order?characterEncoding=utf8&zeroDateTimeBehavior=convertToNull
+user = wangjie
+password =wangjie
+devMode =true
+dbname=order
+
+
+#JFinalIDE project config
+projectName=Ordering
+projectPath=/Ordering
+mainPkg=com.ordering
+jfinalConfigClassName=MainConfig
+jfinalConfigClassFullName=com.ordering.common.config.MainConfig
+jfinalConfigClassPath=/src/com/ordering/common/config/MainConfig.java
+webxmlPath=
+jettyNeed=true
+jettyPort=8081
+methodMain=true
+useDefaultViewPath=true
+baseViewPath=/
+baseUploadPath=upload/temp/
+baseDownloadPath=download
+viewType=ViewType.JFINAL_TEMPLATE
+dbplugin=
+jsonFactory=MixedJsonFactory
+
+#model gen config
+baseModelPackageName=com.xiaomuedu.common.model.base
+modelPackageName=com.xiaomuedu.common.model
+generateDaoInModel=true
+generateDataDictionary=false
+removedTableNamePrefixes=
