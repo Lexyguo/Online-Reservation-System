@@ -13,4 +13,10 @@ public class CartService {
 	public Cart findById(int id) {
 		return dao.findById(id);
 	}
+	public void deleteById(int id) {
+		dao.deleteById(id);
+	}
+	public void deleteByTag(String tag) {
+		dao.deleteById(tag);
+	}
 }

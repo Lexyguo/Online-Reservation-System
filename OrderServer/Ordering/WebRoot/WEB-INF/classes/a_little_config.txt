@@ -1,4 +1,0 @@
-jdbcUrl = jdbc:mysql://101.132.28.94/order?characterEncoding=utf8&zeroDateTimeBehavior=convertToNull
-user = wangjie
-password =wangjie
-devMode = true
