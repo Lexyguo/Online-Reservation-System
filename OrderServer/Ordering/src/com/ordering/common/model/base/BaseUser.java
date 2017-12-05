@@ -33,14 +33,6 @@ public abstract class BaseUser<M extends BaseUser<M>> extends Model<M> implement
 		return get("password");
 	}
 
-	public void setDepartment(java.lang.String department) {
-		set("department", department);
-	}
-
-	public java.lang.String getDepartment() {
-		return get("department");
-	}
-
 	public void setTel(java.lang.String tel) {
 		set("tel", tel);
 	}

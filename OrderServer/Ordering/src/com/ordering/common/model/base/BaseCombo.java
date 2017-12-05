@@ -25,20 +25,12 @@ public abstract class BaseCombo<M extends BaseCombo<M>> extends Model<M> impleme
 		return get("combo_name");
 	}
 
-	public void setDishes(java.lang.Integer dishes) {
-		set("dishes", dishes);
+	public void setComboPrice(java.lang.Integer comboPrice) {
+		set("combo_price", comboPrice);
 	}
 
-	public java.lang.Integer getDishes() {
-		return get("dishes");
-	}
-
-	public void setOrderNum(java.lang.Integer orderNum) {
-		set("order_num", orderNum);
-	}
-
-	public java.lang.Integer getOrderNum() {
-		return get("order_num");
+	public java.lang.Integer getComboPrice() {
+		return get("combo_price");
 	}
 
 	public void setBookings(java.lang.Integer bookings) {

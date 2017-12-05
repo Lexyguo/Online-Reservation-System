@@ -33,14 +33,6 @@ public abstract class BaseOrders<M extends BaseOrders<M>> extends Model<M> imple
 		return get("ordertime");
 	}
 
-	public void setAmount(java.lang.Integer amount) {
-		set("amount", amount);
-	}
-
-	public java.lang.Integer getAmount() {
-		return get("amount");
-	}
-
 	public void setTotal(java.lang.Double total) {
 		set("total", total);
 	}

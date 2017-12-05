@@ -10,6 +10,7 @@ import com.jfinal.config.Routes;
 import com.jfinal.core.JFinal;
 import com.jfinal.kit.PropKit;
 import com.jfinal.template.Engine;
+import com.ordering.User.UserController;
 import com.ordering.cart.test;
 import com.ordering.common.model._MappingKit;
 import com.ordering.index.IndexController;
@@ -51,7 +52,7 @@ public class MainConfig extends JFinalConfig {
 	public void configRoute(Routes me) {
 		me.add("/", IndexController.class);	
 		//me.add("/carttest", test.class);
-		
+		me.add("/user",UserController.class);
 	}
 	/**
 	 * 配置JFinal插件

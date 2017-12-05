@@ -33,12 +33,12 @@ public abstract class BaseStock<M extends BaseStock<M>> extends Model<M> impleme
 		return get("category");
 	}
 
-	public void setCount(java.lang.Integer count) {
-		set("count", count);
+	public void setAmount(java.lang.Integer amount) {
+		set("amount", amount);
 	}
 
-	public java.lang.Integer getCount() {
-		return get("count");
+	public java.lang.Integer getAmount() {
+		return get("amount");
 	}
 
 	public void setDate(java.util.Date date) {
