@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">	
+	<title>个人中心</title>
+  <link rel="stylesheet" href="assets/css/amazeui.min.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/app.css">
+</head>
+<body>
+ <header data-am-widget="header" class="am-header am-header-default" style="background-color: #333">
+      <div class="am-header-left am-header-nav">
+          <a href="menu.html" class="">
+            <i class="am-header-icon am-icon-home"></i>
+          </a>
+      </div>
+
+      <h1 class="am-header-title">
+          xxx企业餐厅logo
+      </h1>
+
+      <div class="am-header-right am-header-nav">
+          <a href="person.html">
+            <i class="am-header-icon am-icon-user"></i>
+          </a>
+          <a>
+            <i class="am-header-icon am-icon-shopping-cart am-btn" id="shop" data-am-modal="{target: '#my-cart'}"></i>       
+          </a>          
+          <div class="am-popup" id="my-cart">
+            <div class="am-popup-inner">
+              <div class="am-popup-hd">
+                <h4 class="am-popup-title">购物车</h4>
+                <span data-am-modal-close class="am-close">&times;</span>
+              </div>
+              <div class="am-popup-bd">
+                  <table class="am-table hide" id="table">
+                    <thead>
+                        <tr>                       
+                            <th>名称</th>
+                            <th>数目</th>
+                            <th>单价</th>
+                            <th>小记</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbody">
+                    </tbody>
+                </table>
+                <div class="box" id="box">购物车里没有任何商品</div>
+                <h2 id="h2" class="">总价格：￥<span id="totalPrice">0</span>
+                  <button id="accounts" type="button" class="am-btn am-btn-default am-round">结账</button></h2>
+            </div>
+          </div>
+     
+      </div>
+  </header>
+  <personinfo class="am-container">
+    <div class="am-u-sm-3 am-u-sm-centered head">
+      <p>
+        <img class="am-img-thumbnail am-circle" src="images/head.jpg"/>
+      </p>      
+      <label id="idNumber"></label>
+    </div>
+    <div class="info">
+      <ul class="am-list am-list-static am-list-border">
+        <li>
+          <div class="am-g">
+            <button class="am-btn" style="background:#fff;box-shadow:inset 0 3px 5px #fff;width:inherit" data-am-modal="{target: '#my-personinfo'}">
+              <div class="am-u-sm-2">编辑个人信息</div>
+              <div class="am-u-sm-1 am-u-sm-offset-2">
+                <i class="am-icon-chevron-right" aria-hidden="true"></i>
+              </div>
+            </button>
+            <div class="am-popup" id="my-personinfo">
+              <div class="am-popup-inner">
+                <div class="am-popup-hd">
+                  <h4 class="am-popup-title">编辑个人信息</h4>
+                  <span data-am-modal-close class="am-close">&times;</span>
+                </div>
+                <div class="personinfo" id="doc-personinfo-list">
+                    <form class="am-form am-form-horizontal" style="margin:50px 100px">
+
+                        <div class="am-form-group">
+                          <label for="doc-ipt-3" class="am-u-sm-4 am-form-label">工号</label>
+                          <div class="am-u-sm-8">
+                            <input type="text" class="am-form-field" id="doc-ipt-1" disabled>
+                          </div>
+                        </div>
+                      
+                        <div class="am-form-group">
+                            <label for="doc-ipt-3" class="am-u-sm-4 am-form-label">手机号</label>
+                            <div class="am-u-sm-8">
+                              <input type="text" id="doc-ipt-2" placeholder="新的手机号">
+                            </div>
+                        </div>
+
+                        <div class="am-form-group">
+                          <label for="doc-ipt-pwd-2" class="am-u-sm-4 am-form-label">旧密码</label>
+                          <div class="am-u-sm-8">
+                            <input type="password" id="doc-ipt-pwd-1" placeholder="输入旧密码">
+                          </div>
+                        </div>
+                        <div class="am-form-group">
+                            <label for="doc-ipt-pwd-3" class="am-u-sm-4 am-form-label">新密码</label>
+                            <div class="am-u-sm-8">
+                              <input type="password" id="doc-ipt-pwd-2" placeholder="输入新密码">
+                            </div>
+                        </div>
+                      
+                        <div class="am-form-group">
+                          <div class="am-u-sm-8 am-u-sm-offset-4">
+                            <button type="submit" onclick="submitInfo" class="am-btn am-btn-default">提交编辑</button>
+                          </div>
+                        </div>
+                      </form>
+                </div>
+                
+              </div>
+            </div>
+          </div>       
+        </li>
+        <li>
+          <div class="am-g">
+            <button id="historyOrderBtn" class="am-btn" style="background:#fff;box-shadow:inset 0 3px 5px #fff;width:inherit" onclick="historyorderClik()" data-am-modal="{target: '#my-historyorder'}">
+              <div class="am-u-sm-2">历史订单</div>
+              <div class="am-u-sm-1 am-u-sm-offset-2">
+                <i class="am-icon-chevron-right" aria-hidden="true"></i>
+              </div>
+            </button>
+            <div class="am-popup" id="my-historyorder">
+              <div class="am-popup-inner">
+                <div class="am-popup-hd">
+                  <h4 class="am-popup-title">历史订单</h4>
+                  <span data-am-modal-close class="am-close">&times;</span>
+                </div>
+                <div class="am-popup-bd">
+                  <table class="am-table am-table-striped am-table-hoverr" id="doc-historyorder-list">
+                      <thead>
+                        <tr>
+                          <th>创建时间</th>
+                          <th>订单详情</th>
+                          <th>总价</th>
+                        </tr>
+                      </thead>
+                      <tbody id="historyorder">
+
+                      </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>        
+        </li>
+        <li>
+          <div class="am-g" id="outlogin">
+            <button class="am-btn" id="doc-confirm-toggle" style="background:#fff;box-shadow:inset 0 3px 5px #fff;width:inherit">
+              <div class="am-u-sm-2">退出登录</div>
+              <div class="am-u-sm-1 am-u-sm-offset-2">
+                <i class="am-icon-chevron-right" aria-hidden="true"></i>
+              </div>
+            </button>
+            <div class="am-modal am-modal-confirm" tabindex="-1" id="my-confirm">
+              <div class="am-modal-dialog">
+                <div class="am-modal-bd">
+                  你确定要退出登录吗？
+                </div>
+                <div class="am-modal-footer">
+                  <span class="am-modal-btn" data-am-modal-cancel>取消</span>
+                  <span class="am-modal-btn" data-am-modal-confirm>确定</span>
+                </div>
+              </div>
+            </div>
+          </div>       
+        </li>
+      </ul>     
+    </div>
+  </personinfo>
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/amazeui.min.js"></script>
+<script src="assets/js/handlebars.min.js"></script>
+<script src="assets/js/app.js"></script>
+<script type="text/javascript" src="js/server.js"></script>
+<script type="text/javascript" src="js/cart.js"></script>
+</body>
+</html>
